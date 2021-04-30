@@ -6,9 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Create .env file in root folder and paste the following:
 
-### REACT_APP_API_URL = 'https://api.openweathermap.org/data/2.5'
-### REACT_APP_API_KEY = Paste your API key here.
-### REACT_APP_ICON_URL = 'https://openweathermap.org/img/w'
+### `REACT_APP_API_URL = 'https://api.openweathermap.org/data/2.5'`
+### `REACT_APP_API_KEY = Paste your API key here.`
+### `REACT_APP_ICON_URL = 'https://openweathermap.org/img/w'`
 
 REACT_APP_API_KEY is the API key you get from openweathermap api once you have registered. For security reasons I've included .env in my gitignore file
 
