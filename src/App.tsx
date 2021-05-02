@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Grommet, Box, Select, Card, CardBody, CardFooter, Grid, Text, DataChart } from 'grommet';
 import _ from 'lodash';
 import moment from 'moment';
+import { flexclub } from './theme';
 
 interface CityOptions {
     name?: string;
@@ -53,7 +54,7 @@ const App = () => {
             const el1 = document.getElementById('background');
             const el2 = document.getElementsByClassName('owf');
 
-            /* To Do: Include noon - midnight spectrum, for now it's 30 secs just to see the animation */ 
+            /* To Do: Include noon - midnight spectrum, for now it's 30 secs just to see the animation */
 
             if (!_.isNull(el1) && !_.isNull(noon) && !_.isUndefined(noon)) {
                 el1.animate(
@@ -61,12 +62,10 @@ const App = () => {
                         {
                             // from
                             backgroundColor: '#95c4ff',
-                            color: '#000',
                         },
                         {
                             // to
                             backgroundColor: '#030035',
-                            color: '#fff',
                         },
                     ],
                     {
@@ -118,7 +117,7 @@ const App = () => {
                 let chart = [];
                 for (let i = 0; i < hourlyData.length; i++) {
                     chart.push({
-                        hour: moment(new Date(hourlyData[i].dt_txt)).format('hh:mm:ss a'),
+                        hour: moment(new Date(hourlyData[i].dt_txt)).format('hh:mm a'),
                         temp: Math.round(hourlyData[i].main.temp),
                     });
                 }
@@ -172,7 +171,7 @@ const App = () => {
     };
 
     return (
-        <Grommet full>
+        <Grommet theme={flexclub} full>
             <Box id="background" overflow={{ horizontal: 'hidden' }}>
                 <Box pad={{ horizontal: 'medium', vertical: 'large' }}>
                     <Select
